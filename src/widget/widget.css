@@ -1,0 +1,33 @@
+@import "../app/globals.css";
+@source "../smart-ui";
+@source "../components/ui";
+
+/* 主站用 next/font 在 html 上设置 --font-sans。iframe 里没有这个变量时，
+   font-family: var(--font-sans), sans-serif 整条失效，浏览器回到衬线默认字体。 */
+:root {
+  --font-sans: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC",
+    "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+}
+
+html,
+body,
+#root {
+  height: auto;
+  min-height: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans, ui-sans-serif), "PingFang SC", "Noto Sans SC",
+    "Microsoft YaHei", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  padding: 12px;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
